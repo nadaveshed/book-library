@@ -1,25 +1,25 @@
 import { Injectable } from '@angular/core';
-import {Http,Response} from "@angular/http";
-import { Observable } from "rxjs";
-import "rxjs/Rx";
-import {MyNewInterface} from "./my-new-interface";
+import { Http, Response } from '@angular/http';
+import { Observable, pipe } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
+import 'rxjs/add/observable/of';
+
+
 @Injectable()
 export class ApiService {
 
-  private postsURL ="https://jsonplaceholder.typicode.com/posts";
-
   constructor(private http: Http ) {}
- getPosts(): Observable<MyNewInterface[]>{
-    return this.http
-     .get(this.postsURL)
-     .map((response: Response)=> {
-       return <MyNewInterface[]>response.json();
-     })
-     .catch(this.handleError);
- }
 
- private handleError(error: Response) {
-   return Observable.throw(error.statusText);
- }
+  getPosts() {
+    const postsURL = "https://jsonplaceholder.typicode.com/posts";
+    return this.http
+      .get(postsURL)
+      .pipe(
+        map((response: Response) => {
+          return response.json();
+        }),
+        catchError(error => Observable.of(null))
+      ); 
+  }
 
 }
