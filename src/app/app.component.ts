@@ -1,8 +1,9 @@
-import { Component , OnInit } from '@angular/core';
+import { Component , OnInit, Inject } from '@angular/core';
 import { ApiService } from "./api.service"
 import { MyNewInterface } from "./my-new-interface";
 import { error } from 'util';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { MyDialogComponent } from './my-dialog/my-dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -12,11 +13,12 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 })
 export class AppComponent implements OnInit{
   title = 'book library';
+  animal: string;
+  name: string;
 
   _postsArray: MyNewInterface[];
-  closeResult: string;
 
-  constructor(private apiSerivce: ApiService, private modalService: NgbModal){}
+  constructor(private apiSerivce: ApiService, public dialog: MatDialog){}
 
   getPosts(): void {
     this.apiSerivce.getPosts().
@@ -26,27 +28,25 @@ export class AppComponent implements OnInit{
        error => console.log("Error :: " + error ))
   }
 
-  open(content: any) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+  ngOnInit(): void{
+    this.getPosts();
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(MyDialogComponent, {
+      width: '280px',
+      data: { name: this.name, animal: this.animal },
+      position: { right: '45'}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      if ((result != null) && (result.animal != null)) {
+        this.animal = result.animal;
+      }
+     
     });
   }
 
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return  `with: ${reason}`;
-    }
-  }
 
-
-  ngOnInit(): void{
-    this.getPosts();
-
-  }
 }

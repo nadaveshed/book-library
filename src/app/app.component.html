@@ -1,58 +1,36 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div class="container">
-  <div class="row">
-     <table class="table">
-        <thead>
-         <tr>
-           <th class="text-center">User ID</th>
-           <th class="text-center">ID</th>
-           <th class="text-center">Title</th>
-           <th class="text-center">Body</th>
-         </tr>
-       </thead>
-       <tbody>
-         <tr *ngFor="let post of _postsArray">
-             <td class="text-center" style="width: 15px">{{post.userId}}</td>
-             <td class="text-center" style="width: 15px">{{post.id}}</td>
-             <td class="text-center" style="width: 15px">{{post.title}}</td>
-             <td class="text-center">{{post.body}}</td>
-             <button>Edit</button>
-         </tr>
-       </tbody>
-     </table>
-  </div>
-</div>
+<ol>
+  <li>
+    <mat-form-field>
+      <input matInput [(ngModel)]="name" placeholder="What's your name?">
+    </mat-form-field>
+  </li>
+  <li>
+    <button mat-raised-button (click)="openDialog()">Pick one</button>
+  </li>
+  <li *ngIf="animal">
+    You chose: <i>{{animal}}</i>
+  </li>
+</ol><div class="container">
 
-<ng-template #content let-c="close" let-d="dismiss">
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
-    <button type="button" class="close" aria-label="Close" (click)="('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <form>
-      <div class="form-group">
-        <label for="dateOfBirth">Date of birth</label>
-        <div class="input-group">
-          <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
-          <div class="input-group-append">
-            <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button">
-              <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
-            </button>
-          </div>
-        </div>
-      </div>
-    </form>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="('Save click')">Save</button>
-  </div>
-</ng-template>
-
-<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
-
-<hr>
-
-<pre>{{closeResult}}</pre>
+<!-- <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="text-center">User ID</th>
+          <th class="text-center">ID</th>
+          <th class="text-center">Title</th>
+          <th class="text-center">Body</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let post of _postsArray">
+            <td class="text-center" style="width: 15px">{{post.userId}}</td>
+            <td class="text-center" style="width: 15px">{{post.id}}</td>
+            <td class="text-center" style="width: 15px">{{post.title}}</td>
+            <td class="text-center">{{post.body}}</td>
+            <button>Edit</button>
+        </tr>
+      </tbody>
+    </table>
+</div> -->
 
