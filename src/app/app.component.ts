@@ -4,6 +4,7 @@ import { MyNewInterface } from "./my-new-interface";
 import { error } from 'util';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { MyDialogComponent } from './my-dialog/my-dialog.component';
+import { TitleCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-root',

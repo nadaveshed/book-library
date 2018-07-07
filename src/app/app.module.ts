@@ -11,6 +11,7 @@ import { MatInputModule } from '@angular/material/input';
 import { AppComponent } from './app.component';
 import { ApiService } from './api.service';
 import { MyDialogComponent } from './my-dialog/my-dialog.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { MyDialogComponent } from './my-dialog/my-dialog.component';
     BrowserModule,
     FormsModule,
     HttpModule,
+    HttpClientModule,
     NgbModule.forRoot(),
     MatDialogModule,
     MatFormFieldModule,
