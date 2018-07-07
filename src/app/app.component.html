@@ -1,36 +1,32 @@
-<ol>
-  <li>
-    <mat-form-field>
-      <input matInput [(ngModel)]="name" placeholder="What's your name?">
-    </mat-form-field>
-  </li>
-  <li>
-    <button mat-raised-button (click)="openDialog()">Pick one</button>
-  </li>
-  <li *ngIf="animal">
-    You chose: <i>{{animal}}</i>
-  </li>
-</ol><div class="container">
-
-<!-- <div class="row">
+<div class="container">
+  <div class="row">
     <table class="table">
       <thead>
         <tr>
-          <th class="text-center">User ID</th>
+          <!-- <th class="text-center">User ID</th>
           <th class="text-center">ID</th>
           <th class="text-center">Title</th>
-          <th class="text-center">Body</th>
+          <th class="text-center">Body</th> -->
+          <th class="text-center">ID</th>
+          <th class="text-center">Author Name</th>
+          <th class="text-center">Published Date</th>
+          <th class="text-center">Book Title</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let post of _postsArray">
-            <td class="text-center" style="width: 15px">{{post.userId}}</td>
+            <!-- <td class="text-center" style="width: 15px">{{post.userId}}</td>
             <td class="text-center" style="width: 15px">{{post.id}}</td>
             <td class="text-center" style="width: 15px">{{post.title}}</td>
-            <td class="text-center">{{post.body}}</td>
-            <button>Edit</button>
+            <td class="text-center">{{post.body}}</td> -->
+            <td class="text-center" style="width: 15px">{{post.id}}</td>
+            <td class="text-center" style="width: 15px">{{post.auther}}</td>
+            <td class="text-center" style="width: 15px">{{post.publish}}</td>
+            <td class="text-center" style="width: 15px">{{post.title}}</td>
+            <button mat-raised-button class="btn btn-primary" (click)="openDialog()">Edit</button>
         </tr>
       </tbody>
     </table>
-</div> -->
+  </div>
+</div>
 

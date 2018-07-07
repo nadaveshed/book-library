@@ -36,7 +36,6 @@ export class AppComponent implements OnInit{
     const dialogRef = this.dialog.open(MyDialogComponent, {
       width: '280px',
       data: { name: this.name, animal: this.animal },
-      position: { right: '45'}
     });
 
     dialogRef.afterClosed().subscribe(result => {

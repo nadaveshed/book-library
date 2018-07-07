@@ -1,6 +1,10 @@
 export interface MyNewInterface {
-    userId: number;
+    // userId: number;
+    // id: number;
+    // title:string;
+    // body:string;
     id: number;
-    title:string;
-    body:string;
+    auther: string;
+    publish: string;
+    title: string;
 }

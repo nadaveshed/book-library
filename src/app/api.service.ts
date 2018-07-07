@@ -11,7 +11,8 @@ export class ApiService {
   constructor(private http: Http ) {}
 
   getPosts() {
-    const postsURL = "https://jsonplaceholder.typicode.com/posts";
+    // const postsURL = "https://jsonplaceholder.typicode.com/posts";
+    const postsURL = './assets/data/books.json';
     return this.http
       .get(postsURL)
       .pipe(
