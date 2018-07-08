@@ -3,10 +3,6 @@
     <table class="table">
       <thead>
         <tr>
-          <!-- <th class="text-center">User ID</th>
-          <th class="text-center">ID</th>
-          <th class="text-center">Title</th>
-          <th class="text-center">Body</th> -->
           <th class="text-center">ID</th>
           <th class="text-center">Author Name</th>
           <th class="text-center">Published Date</th>
@@ -14,20 +10,24 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let post of _postsArray">
-            <!-- <td class="text-center" style="width: 15px">{{post.userId}}</td>
-            <td class="text-center" style="width: 15px">{{post.id}}</td>
-            <td class="text-center" style="width: 15px">{{post.title}}</td>
-            <td class="text-center">{{post.body}}</td> -->
-            <!-- <pre>{{post | json}}</pre> -->
-            <td class="text-center" style="width: 15px">{{post.id}}</td>
-            <td class="text-center" style="width: 15px">{{post.auther}}</td>
-            <td class="text-center" style="width: 15px">{{post.publish}}</td>
-            <td class="text-center" style="width: 15px">{{post.title}}</td>
-            <button mat-raised-button class="btn btn-primary" (click)="openDialog()">Edit</button>
+        <tr  *ngFor="let folder of mydata?.books" >
+          <td>{{folder['id']}}</td>
+          <td>{{folder['Author Name']}}<button mat-raised-button class="btn btn-primary" (click)="openDialog()">Edit</button></td>
+          <td>{{folder['Published Date']}}<button mat-raised-button class="btn btn-primary" (click)="openDialog()">Edit</button></td>
+          <td>{{removeReg(folder['Book Title']) | titlecase}}<button mat-raised-button class="btn btn-primary" (click)="openDialog()">Edit</button></td>          
+          <button mat-raised-button class="btn btn-danger" (click)="openDialog()">Delete</button>
         </tr>
       </tbody>
     </table>
+
+    
+    <!-- <pre>Data Obtained is: {{ mydata | json }}</pre> -->
+    
+    <!-- <tr  *ngFor="let folder of mydata?.books" > -->
+        <!-- <td>{{titleCaseWord(folder['Author Name'])}}</td> -->
+        <!-- <td>{{removeReg(folder['Author Name'])}}</td> -->
+     <!-- </tr> -->
+    
   </div>
 </div>
 
