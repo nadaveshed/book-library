@@ -10,24 +10,52 @@
         </tr>
       </thead>
       <tbody>
-        <tr  *ngFor="let folder of mydata?.books" >
-          <td>{{folder['id']}}</td>
-          <td>{{folder['Author Name']}}<button mat-raised-button class="btn btn-primary" (click)="openDialog()">Edit</button></td>
-          <td>{{folder['Published Date']}}<button mat-raised-button class="btn btn-primary" (click)="openDialog()">Edit</button></td>
-          <td>{{removeReg(folder['Book Title']) | titlecase}}<button mat-raised-button class="btn btn-primary" (click)="openDialog()">Edit</button></td>          
-          <button mat-raised-button class="btn btn-danger" (click)="openDialog()">Delete</button>
+        <tr *ngFor="let folder of mydata?.books; let i=index;" >
+          <td>{{folder.id}}</td>
+          <td>{{folder["Author Name"]}}</td>
+          <td>{{folder['Published Date']}}</td>
+          <td>{{removeReg(folder['Book Title']) | titlecase}}{{book}}</td>
+          <button mat-raised-button class="btn btn-primary" (click)="openDialog(folder)">Edit</button>          
+          <button mat-raised-button class="btn btn-danger" (click)="openDialog(i)">Delete</button>
+          <!-- <td> <input type="button" value="Edit" (click)="openDialog(folder)"/></td> -->
+          {{i}}
         </tr>
+        <i>{{author}} </i><i>{{date}} </i><i>{{book}}</i>
       </tbody>
+       
     </table>
 
     
     <!-- <pre>Data Obtained is: {{ mydata | json }}</pre> -->
     
-    <!-- <tr  *ngFor="let folder of mydata?.books" > -->
+    <tr  *ngFor="let folder of mydata?.books; let index = index;"> 
+
         <!-- <td>{{titleCaseWord(folder['Author Name'])}}</td> -->
-        <!-- <td>{{removeReg(folder['Author Name'])}}</td> -->
-     <!-- </tr> -->
-    
+        <!-- <td>{{index}}) {{removeReg(folder['Author Name'])}} </td> -->
+        <!-- <li> -->
+          <!-- You chose: <br>
+          <i *ngIf="!myFlag"> {{animal}}</i> 
+          <i *ngIf="myFlag"> {{folder['Author Name']}}</i>
+        </li> -->
+        
+
+        <td *ngIf="folder.rowId == editRowId"> 
+           <input type="text" [(ngModel)]="folder['Author Name']">
+                 
+           <button mat-raised-button class="btn btn-danger" (click)="openDialog()">why</button>
+        </td>
+        <td *ngIf="folder.rowId !== editRowId" (click)="toggle(index)">        
+          {{index}} ff
+        </td>
+    </tr>
+
+      <!-- <button mat-icon-button color="accent" (click)="startEdit(i, row.id, row.author, row.date, row.book)">
+        edit
+      </button>
+
+      <button mat-icon-button color="accent" (click)="deleteItem(i, row.id, row.author, row.date, row.book)">
+        delete
+      </button> -->
   </div>
 </div>
 

@@ -7,33 +7,35 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ApiService } from './api.service';
-import { MyDialogComponent } from './my-dialog/my-dialog.component';
+import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MyDialogComponent,
+    EditDialogComponent,
     // Dialog-content-example-dialog
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     HttpClientModule,
     NgbModule.forRoot(),
     MatDialogModule,
     MatFormFieldModule,
     BrowserAnimationsModule,
-    MatInputModule 
+    MatInputModule    
   ],
   providers: [ ApiService ],
   entryComponents: [
-    MyDialogComponent
+    EditDialogComponent
   ],
   bootstrap: [ AppComponent ]
 })

@@ -1,0 +1,21 @@
+<div *ngIf="CloneData">
+  <h1 mat-dialog-title>Hi {{CloneData.name}}</h1>
+  <div mat-dialog-content>
+    What's your author?
+    <mat-form-field>
+    <input matInput [(ngModel)]="CloneData['Author Name']">
+    </mat-form-field>
+    What's your date?
+    <mat-form-field>
+      <input matInput [(ngModel)]="CloneData['Published Date']">
+    </mat-form-field>
+    What's your book title?
+    <mat-form-field>
+      <input matInput [(ngModel)]="CloneData['Book Title']">
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onCloseNo()">Cancel</button>
+    <button mat-button (click)="onCloseOk()">Save</button>
+  </div>
+</div>
