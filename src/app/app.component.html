@@ -15,8 +15,8 @@
           <td>{{folder["Author Name"]}}</td>
           <td>{{folder['Published Date']}}</td>
           <td>{{removeReg(folder['Book Title']) | titlecase}}{{book}}</td>
-          <button mat-raised-button class="btn btn-primary" (click)="openDialog(folder)">Edit</button>          
-          <button mat-raised-button class="btn btn-danger" (click)="openDialog(i)">Delete</button>
+          <button mat-raised-button class="btn btn-primary" (click)="editDialog(folder)">Edit</button>          
+          <button mat-raised-button class="btn btn-danger" (click)="deleteDialog(i)">Delete</button>
           <!-- <td> <input type="button" value="Edit" (click)="openDialog(folder)"/></td> -->
           {{i}}
         </tr>
@@ -39,7 +39,7 @@
         </li> -->
         
 
-        <td *ngIf="folder.rowId == editRowId"> 
+        <!-- <td *ngIf="folder.rowId == editRowId"> 
            <input type="text" [(ngModel)]="folder['Author Name']">
                  
            <button mat-raised-button class="btn btn-danger" (click)="openDialog()">why</button>
@@ -47,15 +47,13 @@
         <td *ngIf="folder.rowId !== editRowId" (click)="toggle(index)">        
           {{index}} ff
         </td>
-    </tr>
+    </tr> -->
 
       <!-- <button mat-icon-button color="accent" (click)="startEdit(i, row.id, row.author, row.date, row.book)">
         edit
       </button>
-
       <button mat-icon-button color="accent" (click)="deleteItem(i, row.id, row.author, row.date, row.book)">
         delete
       </button> -->
   </div>
 </div>
-

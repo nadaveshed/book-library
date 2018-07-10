@@ -29,15 +29,14 @@ export class AppComponent implements OnInit{
     console.log(this.mydata)
   }
 
-  openDialog(folder): void {
+  editDialog(folder, date?): void {
     // this.index=i;
      console.log(folder)
-    const dialogRef = 
-    this.dialog.open(EditDialogComponent, {
+    const dialogRef = this.dialog.open(EditDialogComponent, {
       width: '280px',
       data:folder
-     
     });
+
     // console.log(this.index);
     dialogRef.afterClosed().subscribe(result => {
       // console.log('The dialog was closed');
@@ -51,7 +50,20 @@ export class AppComponent implements OnInit{
     });
   }
 
-
+  deleteDialog(folder): void {
+    // this.index=i;
+     console.log(folder)
+    const dialogRef = this.dialog.open(EditDialogComponent, {
+      width: '280px',
+      data:folder
+    });
+    
+    // console.log(this.index);
+    dialogRef.afterClosed().subscribe(result => {
+      // console.log('The dialog was closed');
+      console.log('The dialog was closed');
+    });
+  }
 
   removeReg(word: string) {
     if (!word) return word;

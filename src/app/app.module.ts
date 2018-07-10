@@ -12,6 +12,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ApiService } from './api.service';
 import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
+import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
+
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -19,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     EditDialogComponent,
+    DeleteDialogComponent
     // Dialog-content-example-dialog
   ],
   imports: [
