@@ -22,7 +22,7 @@ export class EditDialogComponent implements OnInit {
     console.log("clicked cancel")
     console.log(this.data)
     console.log("saved:", this.saved);
-    this.dialogRef.close(this.saved);
+    this.dialogRef.close(null);
   }
 
   onCloseOk(): void {

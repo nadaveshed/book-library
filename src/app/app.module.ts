@@ -22,7 +22,6 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     EditDialogComponent,
     DeleteDialogComponent
-    // Dialog-content-example-dialog
   ],
   imports: [
     BrowserModule,
@@ -38,7 +37,8 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   providers: [ ApiService ],
   entryComponents: [
-    EditDialogComponent
+    EditDialogComponent,
+    DeleteDialogComponent
   ],
   bootstrap: [ AppComponent ]
 })

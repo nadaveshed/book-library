@@ -1,9 +1,11 @@
 <p>
-  delete-dialog works!
+  "Are you sure you want to delete?"
 </p>
 <div>
   <div mat-dialog-actions>
-    <button mat-button (click)="onCloseNo()">Cancel</button>
-    <button mat-button (click)="onCloseOk()">Delete</button>
+    <div class="modal-footer ">
+      <button type="button" class="btn btn-success" (click)="onCloseOk()"><span class="glyphicon glyphicon-ok-sign"></span> Yes</button>
+      <button type="button" class="btn btn-default" (click)="onCloseNo()"><span class="glyphicon glyphicon-remove"></span> No</button>
+  </div>
   </div>
 </div>

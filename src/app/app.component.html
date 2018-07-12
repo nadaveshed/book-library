@@ -3,6 +3,7 @@
     <table class="table">
       <thead>
         <tr>
+          <th class="text-center">id</th>
           <th class="text-center">ID</th>
           <th class="text-center">Author Name</th>
           <th class="text-center">Published Date</th>
@@ -11,6 +12,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let folder of mydata?.books; let i=index;" >
+          {{i}}
           <td>{{folder.id}}</td>
           <td>{{folder["Author Name"]}}</td>
           <td>{{folder['Published Date']}}</td>
@@ -18,9 +20,9 @@
           <button mat-raised-button class="btn btn-primary" (click)="editDialog(folder)">Edit</button>          
           <button mat-raised-button class="btn btn-danger" (click)="deleteDialog(i)">Delete</button>
           <!-- <td> <input type="button" value="Edit" (click)="openDialog(folder)"/></td> -->
-          {{i}}
+          
         </tr>
-        <i>{{author}} </i><i>{{date}} </i><i>{{book}}</i>
+        <button mat-raised-button class="btn btn-success" (click)="add()" >Add</button>
       </tbody>
        
     </table>
