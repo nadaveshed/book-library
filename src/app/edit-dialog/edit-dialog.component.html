@@ -7,8 +7,8 @@
     </mat-form-field>
     What's your date?
     <mat-form-field>
-        <!-- CloneData['Published Date'] -->
-      <input matInput (change)="update($event)">
+      <input matInput [(ngModel)]="CloneData['Published Date']">
+     <!-- <input matInput (change)="update($event)"> -->
     </mat-form-field>
     What's your book title?
     <mat-form-field>

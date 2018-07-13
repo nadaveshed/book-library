@@ -8,20 +8,17 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 })
 export class EditDialogComponent implements OnInit {
    CloneData: any;
-   saved: any;
-   parentValue: string;
 
   constructor(
     public dialogRef: MatDialogRef<EditDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any)
-     {this.saved = data,
-       this.CloneData = data, console.log("the data ", this.data),
-      console.log("saved:", this.saved)}
+    {
+      this.CloneData = data, console.log("the data ", this.data)
+    }
     
   onCloseNo(): void {
     console.log("clicked cancel")
     console.log(this.data)
-    console.log("saved:", this.saved);
     this.dialogRef.close(null);
   }
 

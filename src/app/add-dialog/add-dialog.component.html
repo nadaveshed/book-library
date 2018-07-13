@@ -1,0 +1,26 @@
+<div *ngIf="CloneData">
+    <h1 mat-dialog-title>Hi</h1>
+    <div mat-dialog-content>
+      What's your author?
+      <mat-form-field>
+      <input matInput [(ngModel)]="data['Author Name']">
+      </mat-form-field>
+      <!-- What's your date?
+      <mat-form-field>
+          CloneData['Published Date']
+        <input matInput (change)="update($event)">
+      </mat-form-field> -->
+      What's your date?
+      <mat-form-field>
+        <input matInput [(ngModel)]="data['Published Date']">
+      </mat-form-field>
+      What's your book title?
+      <mat-form-field>
+        <input matInput [(ngModel)]="data['Book Title']">
+      </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+      <button mat-button (click)="onCloseNo()">Cancel</button>
+      <button mat-button (click)="onCloseOk()">Save</button>
+    </div>
+  </div>
