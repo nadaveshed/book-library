@@ -1,15 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { HttpModule } from '@angular/http'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatInputModule } from '@angular/material/input';
-import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule, 
+  MatDatepickerModule, 
+  MatInputModule, 
+  MatIconModule, 
+  MatFormFieldModule,
+  MatNativeDateModule } from '@angular/material';
+  import { DatePipe } from '@angular/common'
 
 import { AppComponent } from './app.component';
 import { ApiService } from './api.service';
@@ -33,16 +35,18 @@ import { AddDialogComponent } from './add-dialog/add-dialog.component';
     HttpClientModule,
     NgbModule.forRoot(),
     MatDialogModule,
+    MatDatepickerModule,
     MatFormFieldModule,
     BrowserAnimationsModule,
     MatInputModule,
-    MatIconModule    
+    MatIconModule,
+    MatNativeDateModule 
   ],
-  providers: [ ApiService ],
+  providers: [ ApiService, MatDatepickerModule, DatePipe ],
   entryComponents: [
     EditDialogComponent,
     DeleteDialogComponent,
-    AddDialogComponent
+    AddDialogComponent,
   ],
   bootstrap: [ AppComponent ]
 })

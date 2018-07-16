@@ -3,28 +3,26 @@
     <table class="table">
       <thead>
         <tr>
-          <th class="text-center">id</th>
-          <!-- <th class="text-center">ID</th> -->
+          <th class="text-center">ID</th>
           <th class="text-center">Author Name</th>
           <th class="text-center">Published Date</th>
           <th class="text-center">Book Title</th>
+          <th class="text-center"><button mat-raised-button class="btn btn-success" (click)="addDialog()"><mat-icon>add</mat-icon></button></th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let folder of mydata?.books; let i=index;">
-          {{i}}
-          <!-- <td>{{folder.id}}</td> -->
+
+          <td>{{folder.id}}</td>
           <td>{{folder["Author Name"]}}</td>
           <td>{{folder['Published Date']}}</td>
-          <td>{{removeReg(folder['Book Title']) | titlecase}}{{book}}</td>
+          <td>{{removeReg(folder['Book Title']) | titlecase}}</td>
           <button mat-raised-button class="btn btn-primary" (click)="editDialog(folder)"><mat-icon>edit</mat-icon></button>          
           <button mat-raised-button class="btn btn-danger" (click)="deleteDialog(i)"><mat-icon>delete</mat-icon></button>
-          <!-- <td> <input type="button" value="Edit" (click)="openDialog(folder)"/></td> -->
-          <!-- <button mat-raised-button class="btn btn-success" (click)="addDialog(folder)" >Add</button> -->
-        </tr>
-          <button mat-raised-button class="btn btn-success" (click)="addDialog()"><mat-icon>add</mat-icon></button>
-      </tbody>
-      
+          </tr>
+          
+        </tbody>
+
     </table>
   </div>
 </div>
