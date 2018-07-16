@@ -5,7 +5,7 @@
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">  
 
     <div class="form-group">
-      <label>Edit book id</label>
+      <label>Edit book id:</label>
       <input 
         type="text" 
         formControlName="id" 
@@ -20,7 +20,7 @@
     </div>
 
     <div class="form-group">
-      <label>What's your author?</label>
+      <label>Edit author name:</label>
       <input 
         type="text" 
         formControlName="author" 
@@ -34,7 +34,7 @@
     </div>
     
     <div class="form-group">
-      <label>What's your date?</label>
+      <label>Edit published date:</label>
       <input 
         type="text" 
         formControlName="date" 
@@ -50,7 +50,7 @@
     </div>
 
     <div class="form-group">
-      <label for="title">What's your book title?</label>
+      <label for="title">Edit book title:</label>
       <input 
         type="text" 
         formControlName="title" 
@@ -66,7 +66,7 @@
   </form>    
 
   <div class="buttons">
-    <button class="btn btn-primary" (click)="onSubmit()">Save</button>
-    <button class="btn btn-basic" (click)="onCloseNo()">Cancel</button>
+    <button class="btn btn-primary btn-lg" (click)="onSubmit()">Save</button>
+    <button class="btn btn-basic btn-lg" (click)="onCloseNo()">Cancel</button>
   </div>
 </div>

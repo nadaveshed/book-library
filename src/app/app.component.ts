@@ -32,8 +32,8 @@ export class AppComponent implements OnInit{
   editDialog(folder): void {
     console.log(folder)
     const dialogRef = this.dialog.open(EditDialogComponent, {
-      width: '300px',
-      height: '600px',
+      width: '350px',
+      height: '620px',
       data: JSON.parse(JSON.stringify(folder))
     });
 
@@ -54,8 +54,8 @@ export class AppComponent implements OnInit{
     this.index=i;
     console.log(i)
     const dialogRef = this.dialog.open(DeleteDialogComponent, {
-      width: '300px',
-      height: '400px',
+      width: '320px',
+      height: '400px'
     });
     
     dialogRef.afterClosed().subscribe(result => {
@@ -69,8 +69,8 @@ export class AppComponent implements OnInit{
   addDialog(): void {
     console.log("index: ", this.mydata.books.length+1);
     const dialogRef = this.dialog.open(AddDialogComponent, {
-      width: '300px',
-      height: '600px',
+      width: '350px',
+      height: '650px',
       data: {
       }
     });
