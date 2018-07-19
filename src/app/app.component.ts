@@ -60,7 +60,7 @@ export class AppComponent implements OnInit{
     
     dialogRef.afterClosed().subscribe(result => {
       if(result) {
-        this.mydata.books.splice(i, 0);
+        this.mydata.books.splice(i, 1);
       }
       console.log('The dialog was closed');
     });
